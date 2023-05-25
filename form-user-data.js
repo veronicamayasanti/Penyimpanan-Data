@@ -13,21 +13,21 @@ function checkForStorage(){
 
 // fungsi putUserList() berguna untuk membuat item storage
 // membuat nilai awal serta memodifikasi nilai pada item storage-nya
-function putUserList(data) {
-    if(checkForStorage()) {
-        let userData = [];
-        if(localStorage.getItem(storageKey) !== null ){
-            userData = JSON.parse(localStorage.getItem(storageKey));
-        }
-
-        userData.unshift(data);
-        if(userData.length > 5){
-            userData.pop();
-        }
-
-        localStorage.setItem(storageKey, JSON.stringify(userData));
+ function putUserList(data) {
+    if (checkForStorage()) {
+      let userData = [];
+      if (localStorage.getItem(storageKey) !== null) {
+        userData = JSON.parse(localStorage.getItem(storageKey));
+      }
+ 
+      userData.unshift(data);
+      if (userData.length > 5) {
+        userData.pop();
+      }
+ 
+      localStorage.setItem(storageKey, JSON.stringify(userData));
     }
-}
+  }
 
 // fungsi di atas memeriksa apakah fitur web storage sudah didukung melalui fungsi checkForStorage()
 // Jika iya, kita akan membuat sebuah variabel bernama userData yang akan menampung semua data pada item storage.
@@ -58,6 +58,7 @@ function renderUserList() {
       row.innerHTML = '<td>' + user.nama + '</td>';
       row.innerHTML += '<td>' + user.umur + '</td>';
       row.innerHTML += '<td>' + user.domisili + '</td>';
+      
       userList.appendChild(row);
     }
   } 
@@ -74,7 +75,8 @@ function renderUserList() {
       nama: inputNama,
       umur: inputUmur,
       domisili: inputDomisili,
-    }
+    };
+ 
     putUserList(newUserData);
     renderUserList();
   });
@@ -92,4 +94,3 @@ window.addEventListener('load', function () {
     }
   });
 
-  
