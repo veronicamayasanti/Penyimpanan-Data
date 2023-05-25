@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Web Storage World</title>
+  <style>
+    .contents {
+      position: fixed;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      border: 2px solid black;
+      padding: 15px;
+    }
+    
+    #generateButton {
+      margin-top: 5px;
+      margin-bottom: 15px;;
+    }
+  </style>
+</head>
+<body>
+<div class="contents" align="center">
+  <h1>Session Storage</h1>
+  <button id="incrementButton">Tambah nilai</button>
+  <button id="clear">Hapus storage</button>
+  <h3>Kamu sudah menekan tombol di atas sebanyak:</h3>
+  <h2 id="count">0</h2>
+</div>
+ 
+<script src="session.js"></script>
+</body>
+</html>
