@@ -1,12 +1,11 @@
  const storageKey = 'STORAGE_KEY';
   const submitAction = document.getElementById('form-data-user');
 
-
 //   memeriksa apakah fitur web storage didukung oleh browser yang kita gunakan melalui sebuah fungsi bernama checkForStorage()
 
-function checkForStorage(){
-    return typeof (storage) !== 'undefined';
-}
+function checkForStorage() {
+    return typeof (Storage) !== 'undefined';
+  }
 
 // fungsi checkForStorage() akan mengembalikan nilai true jika fitur web storage didukung oleh browser dan false jika tidak.
 
@@ -52,6 +51,7 @@ function getUserList() {
 function renderUserList() {
     const userData = getUserList();
     const userList = document.querySelector('#user-list-detail');
+    
     userList.innerHTML = '';
     for (let user of userData) {
       let row = document.createElement('tr');
@@ -61,7 +61,7 @@ function renderUserList() {
       
       userList.appendChild(row);
     }
-  } 
+  }
 
 //Kemudian kita akan menambahkan event listener ke tombol submit untuk mengambil semua data yang sudah di-input ke semua field di form.
 // Lalu kita akan menyimpannya pada item storage melalui fungsi putUserList().
